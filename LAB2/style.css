@@ -12,6 +12,7 @@
   box-shadow: gray 1px 1px;
   position: absolute;
   margin-top: -20px;
+  pointer-events: none;
 }
 
 .row {
