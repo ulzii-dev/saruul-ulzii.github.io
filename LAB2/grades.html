@@ -48,14 +48,6 @@
     <h1>Retrieve your grade</h1>
     <form action="http://mumstudents.org/params.php">
       <div class="row">
-        <label for="assignment" class="assign">Assignment</label>
-        <select name="assignment" id="assignment">
-          <option value="assignment1">Assignment 1</option>
-          <option value="assignment2">Assignment 2</option>
-          <option value="assignment3">Assignment 3</option>
-        </select>
-      </div>
-      <div class="row">
         <label for="name" class="student-name">Name: </label>
         <input
           type="text"
@@ -80,6 +72,14 @@
           required
         />
         <span class="memo">(must be 6-char length)</span>
+      </div>
+      <div class="row">
+        <label for="assignment" class="assign">Assignment</label>
+        <select name="assignment" id="assignment">
+          <option value="assignment1">Assignment 1</option>
+          <option value="assignment2">Assignment 2</option>
+          <option value="assignment3">Assignment 3</option>
+        </select>
       </div>
       <div class="row">
         <label for="entry" class="entry">Entry selection: </label>
