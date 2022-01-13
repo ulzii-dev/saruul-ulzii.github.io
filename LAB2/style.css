@@ -1,0 +1,80 @@
+.form-container {
+  width: 45%;
+  height: 220px;
+  margin: 50px;
+  border-radius: 5px;
+  box-shadow: #330022 2px 2px;
+  background-color: rgb(183, 221, 243);
+  padding: 10px;
+}
+
+.form-title-button {
+  box-shadow: gray 1px 1px;
+  position: absolute;
+  margin-top: -20px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  flex-direction: row;
+  padding: 5px 0;
+}
+
+.row:first-child {
+  margin-top: 5px;
+}
+
+.row label {
+  width: 40%;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.row input[type="text"],
+input[type="number"] {
+  height: fit-content;
+  box-shadow: inset gray 1px 1px;
+}
+
+select {
+  height: 25px;
+}
+
+.row span .small-font {
+  padding: 5px;
+}
+
+.small-font {
+  padding-left: 5px;
+  font-size: 14px;
+}
+
+.short {
+  width: 15%;
+}
+
+.red {
+  color: red;
+}
+
+.to {
+  padding: 0 3px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+button[type="submit"] {
+  width: 25%;
+  height: 30px;
+  color: white;
+  box-shadow: inset lightgray 1px 1px;
+  background-color: rgb(25, 82, 206);
+  font-weight: bold;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .title {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+        .my-title {
+            color: #2373cf;
+        }
+        .y-text{
+            color: #406de9;
+        }
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: aliceblue;
+        }
+
+        h2 {
+            font-weight: 200;
+            font-size: medium;
+            color:#2373cf;
+        }
+        .numbered {
+            list-style-type: decimal;
+        }
+
+        .movie-link:link {
+            color: rgb(47, 61, 255);
+            text-decoration: none;
+        }
+
+        .movie-link:focus {
+            color: rgb(10, 56, 50);
+        }
+
+        .movie-link:visited {
+            color: rgb(104, 194, 19);
+        }
+
+        .movie-link:hover {
+            color: green;
+            text-decoration: underline;
+        }
+        .my-moods {
+            display: flex;
+            margin-right: 300px;
+        }
+        .happy {
+            flex: 1;
+        }
+        .happy > p {
+            color: rgb(240, 156, 0);
+        }
+        .sad {
+            flex: 1;
+        }
+        .sad > p {
+            color: rgb(3, 32, 194);
+        }
+        .fact-style {
+            font-style: italic;
+        }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>About Me</title>
+</head>
+<body>
+    <div class="title">
+        <h1 class="my-title">About Saruul-Ulzii Sampilnorov</h1>
+        <p class="name">My name is Saruul and I am <span class="y-text">short-haired</span>,
+            <span class="y-text">skinny</span> and <span class="y-text">biker</span>.</h3>
+    </div>
+    <hr>
+    <div class="my-classes">
+        <h2>My Classes This Quarter</h2>
+        <ul>
+            <li>CS472	Web Programming</li>
+            <li>CS525	Advanced Software Development</li>
+            <li>CS572	Modern Web Applications</li>
+            <li>CS472	Web Programming</li>
+        </ul>
+    </div>
+    <div class="my-favorites">
+        <h2>My Favorite Movies</h2>
+        <ul class="numbered">
+            <li>Gladiator (<a class="movie-link" target="_blank" href="https://www.imdb.com/title/tt0172495/?ref_=tt_sims_tt_i_7">IMDB</a>)</li>
+            <ul>
+                <li>Director
+                    <ul>
+                        <li>
+                            Ridley Scott
+                        </li>
+                    </ul>
+                </li>
+                <li>Genre
+                    <ul>
+                        <li>Action</li>
+                        <li>Adventure</li>
+                        <li>Drama</li>
+                    </ul>
+                </li>
+            </ul>    
+            <li>Legends of the Fall (<a class="movie-link" target="_blank" href="https://www.imdb.com/title/tt0110322/">IMDB</a>)</li>
+            <ul>
+                <li>Director
+                    <ul>
+                        <li>
+                            Edward Zwick
+                        </li>
+                    </ul>
+                </li>
+                <li>Genre
+                    <ul>
+                        <li>Romance</li>
+                        <li>War</li>
+                        <li>Drama</li>
+                    </ul>
+                </li>
+            </ul>    
+            <li>The Shawshank  Redemption (<a class="movie-link" target="_blank" href="https://www.imdb.com/title/tt0111161/?ref_=ttls_li_tt">IMDB</a>)</li>
+            <ul>
+                <li>Director
+                    <ul>
+                        <li>
+                            Frank Darabont
+                        </li>
+                    </ul>
+                </li>
+                <li>Genre
+                    <ul>
+                        <li>Drama</li>
+                    </ul>
+                </li>
+            </ul>      
+        </ul>
+    </div>
+    <div>
+        <h2>My Moods</h2>
+        <div class="my-moods">
+            <div class="happy">
+                <p>Happy: Added some text just for test DropCap. Added some text just for test DropCap.</p>
+                <img width="300" height="300" src="https://external-preview.redd.it/K0XDUy0RLhPJT9cUQwBszK0H3LmKx3-p3DNpNdjk4gc.jpg?auto=webp&s=23a36011e4fc3ebfaf063fb6783fe9d3e8429ec0" alt="happy-mood">
+            </div>
+            <div class="sad">
+                <p>Sad: Added some text just for test DropCap. Added some text just for test DropCap.</p>
+                <img height="300" src="https://www.deepintolove.com/wp-content/uploads/2012/05/bird-in-the-rain.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="fun-facts">
+        <h2>Fun Facts about My Neighbors</h2>
+        <div class="fun-facts">
+            <ul>
+                <li>Sam: <span class="fact-style">Fresh air</span> is his hobby, he live in outside.</li>
+                <li>Tony: <span class="fact-style">Running man</span>, he is Forest Gump.</li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="http://validator.w3.org/check?uri=referer"
+     onclick="this.href='https://validator.w3.org/check?uri=' + 
+document.URL"><img
+        src="../assets/w3c.png"
+        alt="html validator"/></a>
+        <a href="http://validator.w3.org/css-validator?uri=referer"
+         onclick="this.href='https://validator.w3.org/check?uri=' + 
+    document.URL"><img width="88" height="33"
+            src="../assets/w3c-css.png"
+            alt="css validator"/></a>
+</body>
+</html>

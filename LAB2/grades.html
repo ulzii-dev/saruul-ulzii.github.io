@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Retrieve Grade</title>
+  </head>
+  <style>
+    body {
+      padding: 50px;
+    }
+
+    select,
+    input {
+      margin: 20px 0;
+    }
+
+    label {
+      width: 200px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      width: 400px;
+      border: solid 1px gray;
+      padding: 10px 50px;
+      margin: auto;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    }
+
+    .memo {
+      font-size: small;
+      color: red;
+      padding-left: 5px;
+    }
+
+    #agree {
+      padding-left: 5px;
+    }
+  </style>
+  <body>
+    <h1>Retrieve your grade</h1>
+    <form action="http://mumstudents.org/params.php">
+      <div class="row">
+        <label for="assignment" class="assign">Assignment</label>
+        <select name="assignment" id="assignment">
+          <option value="assignment1">Assignment 1</option>
+          <option value="assignment2">Assignment 2</option>
+          <option value="assignment3">Assignment 3</option>
+        </select>
+      </div>
+      <div class="row">
+        <label for="name" class="student-name">Name: </label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          size="16"
+          minlength="1"
+          maxlength="16"
+          required
+        />
+      </div>
+      <div class="row">
+        <label for="id" class="student-id">Student ID: </label>
+        <input
+          type="text"
+          pattern="[0-9]{6}"
+          name="id"
+          id="id"
+          size="6"
+          minlength="6"
+          maxlength="6"
+          required
+        />
+        <span class="memo">(must be 6-char length)</span>
+      </div>
+      <div class="row">
+        <label for="entry" class="entry">Entry selection: </label>
+        <select name="entry" id="entry">
+          <option value="Aug2021">Aug2021</option>
+          <option value="Oct2021">Oct2021</option>
+          <option value="May2021">May2021</option>
+          <option value="Feb2021">Feb2021</option>
+        </select>
+      </div>
+      <div class="row">
+        <input
+          type="checkbox"
+          name="agree"
+          id="agree"
+          value="agreed"
+          required
+        />
+        <label id="agree" for="agree">I agree that agreement.</label>
+      </div>
+      <input type="submit" value="Get Grade!" />
+    </form>
+  </body>
+</html>

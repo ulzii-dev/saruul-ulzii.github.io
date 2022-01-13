@@ -1,0 +1,62 @@
+.my-moods p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+}
+
+.numbered li {
+  color: #1a55c4;
+}
+
+.fun-facts li {
+  background-color: #a9e6a9;
+}
+
+hr {
+  background-color: greenyellow;
+  height: 2px;
+}
+
+p:first-letter {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  float: left;
+  font-size: 3rem;
+  line-height: 0.65;
+  margin: 0.1em 0.1em 0.2em 0;
+}
+
+.name:first-letter {
+  font-size: 20px;
+  line-height: 12px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.my-favorites > ul {
+  counter-reset: my-counter 4;
+  list-style: none;
+}
+
+.my-favorites > ul > li {
+  counter-increment: my-counter -1;
+}
+
+.my-favorites > ul > li::before {
+  content: counter(my-counter) ". ";
+  color: #2103ce;
+  font-weight: bold;
+}
+
+.my-favorites ul > ul {
+  list-style-type: none;
+}
+.my-favorites ul > ul > li {
+  color: orange;
+}
+
+.my-favorites ul > li > ul {
+  list-style-type: none;
+}
+
+.my-favorites ul > li > ul > li {
+  color: darkmagenta;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

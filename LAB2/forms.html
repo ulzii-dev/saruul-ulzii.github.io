@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>HTML Forms Lab</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <button class="form-title-button">New User Signup:</button>
+      <div class="form-body">
+        <form action="http://mumstudents.org/params.php" method="post">
+          <div class="row name">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              minlength="1"
+              size="16"
+              required
+            />
+          </div>
+          <div class="row">
+            <label for="gender" id="gender">Gender:</label>
+            <input type="radio" name="gender" id="male" value="male" /><span
+              >Male</span
+            >
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+              checked
+            /><span>Female</span>
+          </div>
+          <div class="row">
+            <label for="age" id="age">Age:</label>
+            <input
+              class="short"
+              type="number"
+              name="age"
+              id="age"
+              minlength="1"
+              maxlength="2"
+              size="6"
+              required
+            />
+          </div>
+          <div class="row">
+            <label for="" id="type">Personality type:</label>
+            <input
+              class="short"
+              type="text"
+              name="type"
+              id="type"
+              maxlength="4"
+              minlength="1"
+              size="6"
+              required
+            /><span class="small-font"
+              >(<a
+                href="http://www.humanmetrics.com/cgi-win/JTypes2.asp"
+                class="red"
+                >Don't know your type?</a
+              >)</span
+            >
+          </div>
+          <div class="row">
+            <label for="os" id="age">Favority OS:</label>
+            <select name="os" id="os">
+              <option value="Mac">Mac OSX</option>
+              <option value="Windows" selected>Windows</option>
+              <option value="Linux">Linux</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="sage" id="sage">Seeking age:</label>
+            <input
+              class="short"
+              type="number"
+              name="sagemin"
+              placeholder="min"
+              minlength="1"
+              maxlength="2"
+              size="6"
+              id="agemin"
+              required
+            />
+            <span class="to">to</span>
+            <input
+              class="short"
+              type="number"
+              name="sagemax"
+              placeholder="max"
+              minlength="1"
+              maxlength="2"
+              size="6"
+              id="agemax"
+              required
+            />
+          </div>
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
