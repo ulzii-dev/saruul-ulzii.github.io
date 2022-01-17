@@ -16,8 +16,11 @@
         setTimeout(booyah(), 2000);
       </pre>
 
-      <p>Answer:</p>
-      <pre></pre>
+      <pre>
+Answer: 
+        1. setTimeout(booyah, 2000)  is calling setTimeout properly and booyah function will run after 2000ms.
+        2. setTimeout(booyah(), 2000) is calling booyah function directly, and it won't work after 2000ms.
+      </pre>
     </fieldset>
     <fieldset>
       <legend>
@@ -34,7 +37,11 @@
         alert(y(2,3));
       </pre>
 
-      <p>Answer:</p>
+      <p>
+        Answer: First it will get result 6 into x, then alert 6, and after that
+        it will get function into y, then y will become like myFunc, so y(2, 3)
+        will return 6, it will also same result, alert(6)
+      </p>
       <pre></pre>
     </fieldset>
     <fieldset>
@@ -49,14 +56,21 @@
       </pre>
 
       <p>Answer:</p>
-      <pre></pre>
+      <pre>
+        var booyah1 = function(){ alert('BOOYAH!');};
+
+        var booyah2 = setTimeout(function(){ alert('BOOYAH!');}, 2000);
+      </pre>
     </fieldset>
     <fieldset>
       <legend>
         Question 4 What is "Unobtrusive Javascript"? What is the practical
         application of Unobtrusive Javascript (and the reasons for using it)?
       </legend>
-      <p>Answer:</p>
+      <p>
+        Answer: It means the JS file is separated from HTML. It will help to
+        write a clean code and be more secure.
+      </p>
       <pre></pre>
     </fieldset>
   </body>
