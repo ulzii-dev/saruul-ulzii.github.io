@@ -26,5 +26,7 @@ function changeWeigth(check){
     var bigText = document.getElementById('big_text');
     bigText.style.color = check.checked ? "#00FF00" : "#000";
     bigText.style.textDecoration = check.checked ? "underline" : "none";
-    document.body.style.backgroundImage = check.checked ? "url(https://media.istockphoto.com/vectors/decorative-dividers-text-lines-vintage-hand-drawn-border-decoration-vector-id1130251295)" : "unset";
+    document.body.style.backgroundImage = check.checked ? "url(https://st2.depositphotos.com/1187563/12162/i/950/depositphotos_121629786-stock-photo-printing-money-100-dollar-bills.jpg)" : "unset";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
 }
