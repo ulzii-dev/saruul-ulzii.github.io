@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="ascii.css" />
+    <script src="animations.js"></script>
+    <script src="ascii.js"></script>
+    <title>ASCIImation</title>
+  </head>
+  <body>
+    <div class="ascii-container">
+      <h1>CS472: ASCII Animation Viewer</h1>
+      <div class="board">
+        <textarea name="anim" id="anim" cols="80" rows="20"></textarea>
+      </div>
+      <div class="controls">
+        <fieldset>
+          <legend>Play Controls</legend>
+          <button id="start" onclick="startAnim(this)">Start</button>
+          <button id="stop" onclick="stopAnim(this)" disabled>Stop</button>
+        </fieldset>
+        <fieldset>
+          <legend>Animation</legend>
+          <select name="animation" id="animation" onchange="animateIt(this)">
+            <option value="Blank">Blank</option>
+            <option value="Custom">Custom</option>
+            <option value="Exercise">Exercise</option>
+            <option value="Juggler">Juggler</option>
+            <option value="Bike">Bike</option>
+            <option value="Dive">Dive</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Size</legend>
+          <select name="size" id="size" onchange="fontChanged(this)">
+            <option value="7pt">Tiny</option>
+            <option value="10pt">Small</option>
+            <option value="12pt" selected>Medium</option>
+            <option value="16pt">Large</option>
+            <option value="24pt">Extra Large</option>
+            <option value="32pt">XXX</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <legend>Speed</legend>
+          <input
+            type="checkbox"
+            name="speed"
+            id="speed"
+            onchange="speedChanged(this)"
+          />
+          <label for="speed">Turbo</label>
+        </fieldset>
+      </div>
+    </div>
+  </body>
+</html>
