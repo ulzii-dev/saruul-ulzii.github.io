@@ -1,0 +1,72 @@
+var a = 10;
+var b = 8;
+function x(a) {
+    console.log(a, b, c); //1. 8, undefined, 3
+    var b = function (c) {
+        console.log(a, b, c, this); //3. 8, function, 5, undefined, {hello: b}
+    }
+    if (a >= 10) {
+        a = a * 2;
+    }
+    c = 5;
+    console.log(a, b, c); //2. 8, function, 5
+    return {
+        hello: b
+    };
+}
+var c = 3; // c = 5
+z = x(b); // {hello: function}
+z.hello();
+
+//8, undefined, 3
+//8, function, 5
+//8, function, 5, undefined, {hello: b}
+
+//CSS: postition default: static
+
+//&lt (less than)
+//&gt (greater than)
+
+//a[target="_blank"] {
+//    background-color: yellow;
+//}
+
+//float : left right 2 l baigaa
+
+var Module = (function () {
+    // locally scoped Object
+    let myObject = {}; // "private" let
+    privateMethod = function () {};
+    myObject.someMethod = function () {
+    // Public Method
+    };
+    let myPublic = function(){}
+
+    myObject.privateMethod = function(){}
+
+    myObject.myPublic = myPublic;
+
+    return myObject;
+});
+
+//shift: urt ni nemne
+//unshift: urdaas ni hasna
+//pop //hoinoos ni has ni,
+//push// hoino ni nemne, 
+
+var giveMePizza = function(){
+    return new Promise(function(resolve,reject){
+    if(everythingWorks){
+    resolve("This is true"); // then() will be called
+    } else {
+    reject("This is false"); // catch() will be called
+    }
+    })
+    }
+    giveMePizza()
+    .then(data => console.log(data))
+    .catch(err => console.error(err));
+    console.log('I will run immediately after calling giveMePizza() and before any result arrives');
+
+var btn = document.getElementsById("button");
+btn.src = "https://...."

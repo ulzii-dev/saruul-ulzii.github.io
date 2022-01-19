@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        font-size: large;
+      }
+      legend {
+        font-weight: bold;
+      }
+    </style>
+    <title>JS Exercises</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>
+        Question 1 Determine what this Javascript code will print out (without
+        running it)?
+      </legend>
+      <pre>
+        x = 1;
+        var a = 5;
+        var b = 10;
+        var c = function(a, b, c) {
+                var x = 10;
+                document.write(x);
+                document.write(a);
+                var f = function(a, b, c) {
+                        b = a;
+                        document.write(b);
+                        b = c;
+                        var x = 5;
+                }
+                f(a,b,c);
+                document.write(b);
+        }
+        c(8,9,10);
+        document.write(b);
+        document.write(x);
+        }
+      </pre>
+      <pre>
+      Answer: 
+      10 8 8 9 10 1
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 2 What is the difference between a method and function?
+      </legend>
+      <p>Answer:</p>
+      <pre>
+           <strong>FUNCTION:</strong> Function is set of codes that wrote in certain purpose, example: calcSalary()
+           <strong>METHOD:</strong> Method is property of certain object, example: getName() of Employee object
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 3 What does 'this' refer to when used in a Java method?
+      </legend>
+      <p>Answer:</p>
+      <pre>This means object and its methods</pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 4 What does 'this' refer to when used in a JavaScript method?
+      </legend>
+      <p>Answer:</p>
+      <pre>This means object and its methods</pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 5 What does 'this' refer to when used in a JavaScript
+        constructor function?
+      </legend>
+      <p>Answer:</p>
+      <pre>
+It tells new created object itself, and this.name means new created object's name field.</pre
+      >
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 6 Assume object x is the prototype for object y in Javascript.
+        Object x has a method f( ) containing keyword 'this'. When f is called
+        by x.f( ), what does 'this' refer to?
+      </legend>
+      <p>Answer:</p>
+      <pre>y</pre>
+    </fieldset>
+    <fieldset>
+      <legend>Question 7 What is a free variable in JavaScript?</legend>
+      <p>Answer:</p>
+      <pre>
+This is variable used inside function, but not declared inside function.</pre
+      >
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 8 Create an object that has properties with name = "fred" and
+        major="music" and a property that is a function that takes 2 numbers and
+        returns the smallest of the two, or the square of the two if they are
+        equal.
+      </legend>
+      <p>Answer:</p>
+      <pre>
+      var object = {
+          name: "Sarul",
+          major: "Major",
+    
+          calc: function(var1, var2) {
+              return var1 == var2 ? var1 * var1 : var1 > var2 ? var2 : var1;
+          }
+      };
+
+      var p = Object.create(object);
+      p.calc(3, 3)
+      9
+      p.calc(3,2)
+      2
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 9 Write Javascript code for creating three Employee objects
+        using the "new" keyword and a constructor function. Employee objects
+        have the following fields: name, salary, position.
+      </legend>
+      <p>Answer:</p>
+      <pre>
+      function Employee(name, salary, position) {
+          this.name = name;
+          this.salary = salary;
+          this.position = position;
+      };
+
+      var emp1 = new Employee("Shiyao", 1000000, "CEO");
+      var emp2 = new Employee("SAROL", 1000000, "CTO");
+      var emp3 = new Employee("Dev", 1000000, "Dev");
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 10 Write a Javascript function that takes any number of input
+        arguments and returns the product of the arguments.
+      </legend>
+      <p>Answer:</p>
+      <pre>
+        const prodIt = function productFinder() {
+            var product = 1;
+            for (var i = 0; i < arguments.length; i++) {
+                product *= arguments[i];
+            }
+            return product;
+        }
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 11 Write an arrow function that returns the maximum of its
+        three input arguments.
+      </legend>
+      <p>Answer:</p>
+      <pre>
+      const maxFinder = (a,b,c) => { return a > b && a > c ? a : b > c ? b : c;}
+      </pre>
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure lab</title>
+  </head>
+  <body>
+    <button onclick="rudyTimer()">Click me!</button>
+    <textarea name="change_id" id="change_id" cols="80" rows="30"></textarea>
+  </body>
+  <script>
+    var rudyTimer = (function () {
+      let intervalId;
+      return function () {
+        if (intervalId != null) {
+          clearInterval(intervalId);
+          intervalId = null;
+        } else {
+          intervalId = setInterval(function () {
+            document.getElementById("change_id").innerHTML += "rudy! ";
+          }, 1000);
+        }
+      };
+    })();
+
+    const prodIt = function productFinder() {
+      var product = 1;
+      for (var i = 0; i < arguments.length; i++) {
+        product *= arguments[i];
+      }
+      return product;
+    };
+
+    const newobj = class NewObject {
+      constructor(name, major) {
+        this.name = name;
+        this.major = major;
+      }
+
+      calc(var1, var2) {
+        return var1 == var2 ? var1 * var1 : var1 > var2 ? var2 : var1;
+      }
+    };
+  </script>
+</html>
