@@ -335,11 +335,11 @@
                 Employee.name = n;
               },
               increaseSalary: function (percentage) {
-                Employee.salary = getSalary() * (1 + percentage / 100);
+                setSalary(getSalary() * (1 + percentage / 100));
                 return getSalary();
               },
               incrementAge: function () {
-                Employee.age = getAge() + 1;
+                setAge(getAge() + 1);
                 return getAge();
               }
             };
@@ -384,11 +384,11 @@
               Employee.name = n;
             };
             empObj.increaseSalary = function (percentage) {
-              Employee.salary = getSalary() * (1 + percentage / 100);
+              setSalary(getSalary() * (1 + percentage / 100));
               return getSalary();
             };
             empObj.incrementAge = function () {
-              Employee.age = getAge() + 1;
+              setAge(getAge() + 1);
               return getAge();
             }
             
@@ -408,8 +408,7 @@
             let Employee = {
               name: '',
               age: 0,
-              salary: 0,
-              address: ""
+              salary: 0
             };
             
             let empObj = {};
@@ -426,7 +425,6 @@
               return Employee.name;
             };
           
-            empObj.address = Employee.address;
             empObj.setAge = function (ag) {
               Employee.age = ag;
             };
@@ -435,12 +433,6 @@
             };
             empObj.setName = function (n) {
               Employee.name = n;
-            };
-            empObj.setAddress = function (a) {
-              Employee.address = a;
-            };
-            empObj.getAddress = function () {
-              return Employee.address;
             };
             empObj.increaseSalary = function (percentage) {
               Employee.salary = getSalary() * (1 + percentage / 100);
@@ -453,6 +445,10 @@
             
             return empObj;
         })();
+
+        EmpManager.address = "";
+        EmpManager.setAddress = function(newAdd){this.address = newAdd;}
+        EmpManager.getAddress = function(){ return this.address};
       </pre>
     </fieldset>
     <fieldset>
