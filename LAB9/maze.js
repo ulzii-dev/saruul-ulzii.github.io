@@ -14,8 +14,10 @@ $(document).ready(function(){
         }
     })
     .on("mouseleave", function(){
-        state = "in_game";
-        updateState();
+        if(state == "reset") {
+            state = "in_game";
+            updateState();
+        }
     });
 
     $("#end")
