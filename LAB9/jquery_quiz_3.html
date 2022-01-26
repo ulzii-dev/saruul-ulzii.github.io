@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script>
+      function runBlue() {
+        $("div > ul").css("color", "blue");
+      }
+      function reset() {
+        $("div > ul").css("color", "black");
+      }
+      function addIt() {
+        $(document.body).append("<div><h1>JQuery Core</h1></div>");
+        $("html, body").animate({ scrollTop: $(document).height() }, "slow");
+      }
+      function removeAll() {
+        $("div>h1").each(function () {
+          $(this).remove();
+        });
+      }
+    </script>
+    <title>QUIZ 3</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>
+        Question 1: Find the text in the first paragraph (stripping out the
+        html), then set the html of the last paragraph to show it is just text
+        (the red bold is gone).
+      </legend>
+      <pre>
+        <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="utf-8">
+              <title>text demo</title>
+              <style>
+                p {
+                  color: blue;
+                  margin: 8px;
+                }
+                span {
+                  color: red;
+                }
+              </style>
+              <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+            </head>
+          <body>
+            <p><span>Test</span> Paragraph.</p>
+            <p></p>
+            <script>
+            // <!—INSERT YOUR JQUERY CODE HERE - - >
+            </script>
+          </body>
+          </html>
+      </pre>
+      <p>Answer:</p>
+      <pre>
+        Both will give same result, because $.each is structured like that: function(index, element)
+        Both parameters are optional, 1st one is index, 2nd one is element, it's same like this inside this function.
+
+        // code fragment 1
+        $("li").each(function(idx, e) { <strong><= All params passed, index and element</strong>
+            $(e).css(“color”, “yellow”); 
+        });
+
+        // code fragment 2
+        $("li").each(function() {       <strong><= No param passed, index and element are optional, in this case, it used this, to access certain JQuery object, in this case LI element</strong>
+            $(this).css(“color”, “yellow”); 
+        });
+
+        // code fragment 3
+        $("li").each(function(idx) {    <strong><= 1st param passed, its index, and didn't use in this function</strong>
+            $(this).css(“color”, “yellow”); 
+        });
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 2: Write jQuery code to create a red background for the level-2
+        list items.
+      </legend>
+      <pre>
+        <ul class="level-1">
+            <li class="item-i">I</li>
+            <li class="item-ii">II
+            <ul class="level-2">
+                <li class="item-a">A</li>
+                <li class="item-b">B
+                <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                </ul>
+                </li>
+                <li class="item-c">C</li>
+            </ul>
+            </li>
+            <li class="item-iii">III</li>
+         </ul>
+      </pre>
+      <p>Answer:</p>
+      <pre><strong>$('div > ul').css("color", "blue");</strong></pre>
+      <button onclick="runBlue()">Run it</button>
+      <button onclick="reset()">Reset</button>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 3: Write jQuery code to select the element that comes
+        immediately before item three and change its background color to blue.
+      </legend>
+      <pre>
+        <ul>
+          <li>list item 1</li>
+          <li>list item 2</li>
+          <li class="third-item">list item 3</li>
+          <li>list item 4</li>
+          <li>list item 5</li>
+         </ul>
+      </pre>
+      <p>Answer:</p>
+      <pre>$(document.body).append('<div><h1>JQuery Core</h1></div>');</pre>
+      <button onclick="addIt()">Append element!</button>
+      <button onclick="removeAll()">Remove elements!</button>
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 4: Let us one additional requirement for the "Go Vegetarian"
+        button of the Webville Eatery Menu described in Chapter 4 of Head First
+        jQuery: "Turkey" in the ingredient list of any entree is replaced by
+        "Mashed Potatoes" in the vegetarian version. You may assume there is a
+        class "turkey" that identifies these items in the list. Describe the
+        changes to the Javascript (jQuery) code to implement this new
+        requirement.
+      </legend>
+      <pre></pre>
+      <p>Answer:</p>
+      <pre>$(document.body).append('<div><h1>JQuery Core</h1></div>');</pre>
+      <button onclick="addIt()">Append element!</button>
+      <button onclick="removeAll()">Remove elements!</button>
+    </fieldset>
+  </body>
+</html>
