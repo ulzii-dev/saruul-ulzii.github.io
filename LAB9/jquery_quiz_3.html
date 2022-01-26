@@ -9,11 +9,25 @@
       type="text/javascript"
     ></script>
     <script>
-      function runBlue() {
-        $("div > ul").css("color", "blue");
+      function runQ1() {
+        $("#question1 p:last").text($("#question1 p:first").text());
       }
-      function reset() {
-        $("div > ul").css("color", "black");
+      function runQ2() {
+        $("#question2").find("ul ul li").css("background-color", "white");
+
+        $("#question2")
+          .find("ul ul li")
+          .not("#question2 ul ul ul li")
+          .css("background-color", "red");
+      }
+      function resetQ2() {
+        $("#question2").find("ul li").css("background-color", "unset");
+      }
+      function runQ3() {
+        $(".third-item").prev().css("background-color", "blue");
+      }
+      function resetQ3() {
+        $(".third-item").prev().css("background-color", "white");
       }
       function addIt() {
         $(document.body).append("<div><h1>JQuery Core</h1></div>");
@@ -34,7 +48,7 @@
         html), then set the html of the last paragraph to show it is just text
         (the red bold is gone).
       </legend>
-      <pre>
+      <pre id="question1">
         <!doctype html>
           <html lang="en">
             <head>
@@ -62,42 +76,27 @@
       </pre>
       <p>Answer:</p>
       <pre>
-        Both will give same result, because $.each is structured like that: function(index, element)
-        Both parameters are optional, 1st one is index, 2nd one is element, it's same like this inside this function.
-
-        // code fragment 1
-        $("li").each(function(idx, e) { <strong><= All params passed, index and element</strong>
-            $(e).css(“color”, “yellow”); 
-        });
-
-        // code fragment 2
-        $("li").each(function() {       <strong><= No param passed, index and element are optional, in this case, it used this, to access certain JQuery object, in this case LI element</strong>
-            $(this).css(“color”, “yellow”); 
-        });
-
-        // code fragment 3
-        $("li").each(function(idx) {    <strong><= 1st param passed, its index, and didn't use in this function</strong>
-            $(this).css(“color”, “yellow”); 
-        });
+        $("#question1 p:last").replaceWith($("#question1 p:first").text());
       </pre>
+      <button onclick="runQ1()">Run it</button>
     </fieldset>
     <fieldset>
       <legend>
         Question 2: Write jQuery code to create a red background for the level-2
         list items.
       </legend>
-      <pre>
+      <pre id="question2">
         <ul class="level-1">
             <li class="item-i">I</li>
             <li class="item-ii">II
             <ul class="level-2">
                 <li class="item-a">A</li>
                 <li class="item-b">B
-                <ul class="level-3">
-                    <li class="item-1">1</li>
-                    <li class="item-2">2</li>
-                    <li class="item-3">3</li>
-                </ul>
+                  <ul class="level-3">
+                      <li class="item-1">1</li>
+                      <li class="item-2">2</li>
+                      <li class="item-3">3</li>
+                  </ul>
                 </li>
                 <li class="item-c">C</li>
             </ul>
@@ -106,9 +105,14 @@
          </ul>
       </pre>
       <p>Answer:</p>
-      <pre><strong>$('div > ul').css("color", "blue");</strong></pre>
-      <button onclick="runBlue()">Run it</button>
-      <button onclick="reset()">Reset</button>
+      <pre><strong> 
+        $("#question2")
+        .find("ul ul li")
+        .not("#question2 ul ul ul li")
+        .css("background-color", "red");</strong>
+      </pre>
+      <button onclick="runQ2()">Run it</button>
+      <button onclick="resetQ2()">Revert it</button>
     </fieldset>
     <fieldset>
       <legend>
@@ -125,9 +129,9 @@
          </ul>
       </pre>
       <p>Answer:</p>
-      <pre>$(document.body).append('<div><h1>JQuery Core</h1></div>');</pre>
-      <button onclick="addIt()">Append element!</button>
-      <button onclick="removeAll()">Remove elements!</button>
+      <pre>$('.third-item').prev().css('background-color','blue');</pre>
+      <button onclick="runQ3()">Run it</button>
+      <button onclick="resetQ3()">Revert it</button>
     </fieldset>
     <fieldset>
       <legend>
@@ -141,9 +145,45 @@
       </legend>
       <pre></pre>
       <p>Answer:</p>
-      <pre>$(document.body).append('<div><h1>JQuery Core</h1></div>');</pre>
-      <button onclick="addIt()">Append element!</button>
-      <button onclick="removeAll()">Remove elements!</button>
+      <strong
+        >$('li.turkey').replaceWith("
+        <li class="mashed_potatoes">Mashed Potatoes</li>
+        ")</strong
+      >
+    </fieldset>
+    <fieldset>
+      <legend>
+        Question 5: Write Javascript (jQuery) code to change the color of the
+        parent and grandparent list items of the span of text ("some text") in
+        the following to green
+      </legend>
+      <pre>
+            <html>
+              <head>
+                <script>
+                  $(document).ready(function(){
+                  $('span:contains(some text)').parent().parent().css('color', "green")
+                  });
+                </script>
+              </head>
+              <body>
+              <div class="ancestors">
+                <div> (great-grandparent)
+                  <ul> (grandparent)
+                    <li> (direct parent)
+                      <span>some text</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="answer">
+                <p>Answer:</p>
+                $('span:contains(some text)').parent().parent().css('color', "green")
+              </div>
+              </body>
+            </html>
+      </pre>
     </fieldset>
   </body>
 </html>
