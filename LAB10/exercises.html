@@ -18,52 +18,6 @@
   </head>
   <body>
     <fieldset>
-      <legend>dateModule.js</legend>
-      <pre>
-        var myDate = function () {
-            return Date();
-        };
-        exports.myDate = myDate;
-      </pre>
-    </fieldset>
-    <fieldset>
-      <legend>addModule.js</legend>
-      <pre>
-        exports.add = function (req, res, query) {
-            var sum = parseInt(query.first) + parseInt(query.second);
-        
-            res.writeHead(200, { "Content-Type": "text/html" });
-            res.write(`<!DOCTYPE html>
-            <html>
-            <head><meta charset=\"utf-8\"/>
-            <title>Calculator Web Site</title>
-            </head>
-            <body>
-            <p>The sum is: ${String(sum)}</p>
-            </body>
-            </html> `);
-            
-            return res.end();
-        };
-      </pre>
-    </fieldset>
-    <fieldset>
-      <legend>userFileModule.js</legend>
-      <pre>
-        const getName = () => {
-            return "Jim";
-        };
-        const getLocation = () => {
-            return "Munich";
-        };
-        const dateOfBirth = "12.01.1982";
-        
-        exports.getName = getName;
-        exports.getLocation = getLocation;
-        exports.dob = dateOfBirth;
-      </pre>
-    </fieldset>
-    <fieldset>
       <legend>server.js</legend>
       <pre>
         var http = require("http");
@@ -108,22 +62,68 @@
         .listen(8080);
       </pre>
     </fieldset>
+    <legend>ANSWERS</legend>
     <fieldset>
-      <legend>ANSWERS</legend>
+      <legend>N1: Create server, N2: Date Module example</legend>
       <fieldset>
-        <legend>N1: Create server, N2: Module example</legend>
+        <legend>dateModule.js</legend>
+        <pre>
+          var myDate = function () {
+              return Date();    
+          };
+          exports.myDate = myDate;
+        </pre>
         <img src="assets/n2.png" alt="N1" />
+      </fieldset>
+
+      <fieldset>
+        <legend>userFileModule.js</legend>
+        <pre>
+          const getName = () => {
+              return "Jim";
+          };
+          const getLocation = () => {
+              return "Munich";
+          };
+          const dateOfBirth = "12.01.1982";
+          
+          exports.getName = getName;
+          exports.getLocation = getLocation;
+          exports.dob = dateOfBirth;
+        </pre>
         <img src="assets/n3.png" alt="N3" />
       </fieldset>
+    </fieldset>
+    <fieldset>
+      <legend>N3: URL, Query string</legend>
+      <img src="assets/n31.png" alt="N3" />
+      <img src="assets/n32.png" alt="N3" />
+      <img src="assets/n33.png" alt="N3" />
+      <img src="assets/n34.png" alt="N3" />
+    </fieldset>
+    <fieldset>
+      <legend>N4: Adder Module and File system</legend>
+
       <fieldset>
-        <legend>N3: URL, Query string</legend>
-        <img src="assets/n31.png" alt="N3" />
-        <img src="assets/n32.png" alt="N3" />
-        <img src="assets/n33.png" alt="N3" />
-        <img src="assets/n34.png" alt="N3" />
-      </fieldset>
-      <fieldset>
-        <legend>N4: Adder Module and File system</legend>
+        <legend>addModule.js</legend>
+        <pre>
+          exports.add = function (req, res, query) {
+              var sum = parseInt(query.first) + parseInt(query.second);
+          
+              res.writeHead(200, { "Content-Type": "text/html" });
+              res.write(`<!DOCTYPE html>
+              <html>
+              <head><meta charset=\"utf-8\"/>
+              <title>Calculator Web Site</title>
+              </head>
+              <body>
+              <p>The sum is: ${String(sum)}</p>
+              </body>
+              </html> `);
+              
+              return res.end();
+          };
+        </pre>
         <img src="assets/n4.png" alt="N4" />
         <img src="assets/n41.png" alt="N4" />
       </fieldset>
