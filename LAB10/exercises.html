@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      img {
+        width: 60%;
+      }
+      legend {
+        font-weight: 600;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+    </style>
+    <title>Node JS Exercise</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>dateModule.js</legend>
+      <pre>
+        var myDate = function () {
+            return Date();
+        };
+        exports.myDate = myDate;
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>addModule.js</legend>
+      <pre>
+        exports.add = function (req, res, query) {
+            var sum = parseInt(query.first) + parseInt(query.second);
+        
+            res.writeHead(200, { "Content-Type": "text/html" });
+            res.write(`<!DOCTYPE html>
+            <html>
+            <head><meta charset=\"utf-8\"/>
+            <title>Calculator Web Site</title>
+            </head>
+            <body>
+            <p>The sum is: ${String(sum)}</p>
+            </body>
+            </html> `);
+            
+            return res.end();
+        };
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>userFileModule.js</legend>
+      <pre>
+        const getName = () => {
+            return "Jim";
+        };
+        const getLocation = () => {
+            return "Munich";
+        };
+        const dateOfBirth = "12.01.1982";
+        
+        exports.getName = getName;
+        exports.getLocation = getLocation;
+        exports.dob = dateOfBirth;
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>userFileModule.js</legend>
+      <pre>
+        const getName = () => {
+            return "Jim";
+        };
+        const getLocation = () => {
+            return "Munich";
+        };
+        const dateOfBirth = "12.01.1982";
+        
+        exports.getName = getName;
+        exports.getLocation = getLocation;
+        exports.dob = dateOfBirth;
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>server.js</legend>
+      <pre>
+        var http = require("http");
+        var url = require("url");
+        var fs = require("fs");
+        var adderModule = require("./addModule");
+
+        http
+        .createServer(function (req, res) {
+            var q = url.parse(req.url, true);
+            var fileName = "." + q.pathname;
+
+            if (q.pathname == "/add.js") adderModule.add(req, res, q.query);
+            else
+            fs.readFile(fileName, function (err, data) {
+                console.log(err);
+                if (err) {
+                res.writeHead(404, { "Content-Type": "text/html" });
+                return res.end("404 NOT FOUND!");
+                }
+                res.writeHead(200);
+                res.write(data);
+                return res.end();
+            });
+
+            // N1, N2, N3 Answers
+            // var query_string = q.year + " " + q.month;
+            // var query_string = q.year + " " + q.month;
+            // res.write("Query string: " + query_string);
+            // res.write("Request url: " + req.url);
+            // res.write("The date and time are currently: " + dm.myDate());
+            // console.log(
+            //   user.getName() +
+            //     " lives in " +
+            //     user.getLocation() +
+            //     " and was born on " +
+            //     user.dob
+            // );
+            // res.end();
+        })
+        .listen(8080);
+      </pre>
+    </fieldset>
+    <fieldset>
+      <legend>ANSWERS</legend>
+      <fieldset>
+        <legend>N1: Create server, N2: Module example</legend>
+        <img src="assets/n2.png" alt="N1" />
+      </fieldset>
+      <fieldset>
+        <legend>N3: Query string</legend>
+        <img src="assets/n3.png" alt="N3" />
+        <img src="assets/n31.png" alt="N3" />
+        <img src="assets/n32.png" alt="N3" />
+        <img src="assets/n33.png" alt="N3" />
+        <img src="assets/n34.png" alt="N3" />
+      </fieldset>
+      <fieldset>
+        <legend>N4: Adder Modula and File system</legend>
+        <img src="assets/n4.png" alt="N4" />
+        <img src="assets/n41.png" alt="N4" />
+      </fieldset>
+    </fieldset>
+  </body>
+</html>
