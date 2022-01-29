@@ -7,13 +7,10 @@ var bodyParser = require("body-parser");
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/mycss", express.static(__dirname + "/"));
 
 app.use("/calculator", (req, res, next) => {
   res.sendFile(path.join(__dirname + "/add.html"));
-});
-
-app.get("/style.css", function (req, res) {
-  res.sendFile(__dirname + "/" + "style.css");
 });
 
 app.use("/result", (req, res, next) => {
