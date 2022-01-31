@@ -37,13 +37,17 @@ app.get("/", (req, res) => {
   var quiz = 1;
 
   for (const key in req.session) {
-    if (key == "cookie") continue;
-
-    if (key == "quiz") {
-      quiz = req.session[key];
-    }
-    if (key == "score") {
-      score = req.session[key];
+    switch (key) {
+      case "cookie":
+        continue;
+      case "quiz":
+        quiz = req.session["quiz"];
+        console.log(quiz);
+        break;
+      case "score":
+        score = req.session["score"];
+        console.log(score);
+        break;
     }
   }
 
