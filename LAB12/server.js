@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session");
 const path = require("path");
 var bodyParser = require("body-parser");
 
@@ -7,6 +8,13 @@ const app = express();
 app.set(path.join(__dirname, "./views"));
 app.set("view engine", "pug");
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(
+  session({
+    secret: "saltie",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 const question = {
   1: "3, 1, 4, 1, 5",
@@ -25,10 +33,24 @@ const answer = {
 };
 
 app.get("/", (req, res) => {
+  var score = 0;
+  var quiz = 1;
+
+  for (const key in req.session) {
+    if (key == "cookie") continue;
+
+    if (key == "quiz") {
+      quiz = req.session[key];
+    }
+    if (key == "score") {
+      score = req.session[key];
+    }
+  }
+
   res.render("quiz", {
-    question: question[1],
-    score: 0,
-    quiz: 1,
+    question: question[quiz],
+    score: score,
+    quiz: quiz,
   });
 });
 
@@ -39,11 +61,10 @@ app.post("/", (req, res) => {
     score++;
   }
 
-  res.render("quiz", {
-    question: question[quiz],
-    score: score,
-    quiz: quiz,
-  });
+  req.session["score"] = score;
+  req.session["quiz"] = quiz;
+
+  res.redirect(303, "/");
 });
 
 app.listen(3000, () => {
