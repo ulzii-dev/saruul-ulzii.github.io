@@ -42,11 +42,9 @@ app.get("/", (req, res) => {
         continue;
       case "quiz":
         quiz = req.session["quiz"];
-        console.log(quiz);
         break;
       case "score":
         score = req.session["score"];
-        console.log(score);
         break;
     }
   }
